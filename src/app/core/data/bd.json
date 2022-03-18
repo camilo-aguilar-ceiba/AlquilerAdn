@@ -1,0 +1,145 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 1,
+      "age": "25",
+      "nombre": "Camilo Aguilar"
+    },
+    {
+      "id": 2,
+      "age": "25",
+      "nombre": "Andres Felipe"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nombreCategoria": "BASIC",
+      "precio": 320000,
+      "icono": "basic.svg"
+    },
+    {
+      "id": 2,
+      "nombreCategoria": "PREMIUM",
+      "precio": 500000,
+      "icono": "premium.svg"
+    },
+    {
+      "id": 3,
+      "nombreCategoria": "GOLD",
+      "precio": 800000,
+      "icono": "gold.svg"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "marca_vehiculo": "Toyota",
+      "modelo": 2018,
+      "placa": "XML342",
+      "color": "rojo",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 1,
+      "costo": 320000
+    },
+    {
+      "id": 1,
+      "marca_vehiculo": "Toyota",
+      "modelo": 2015,
+      "placa": "XML342",
+      "color": "rojo",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 1,
+      "costo": 320000
+    },
+    {
+      "id": 1,
+      "marca_vehiculo": "Toyota",
+      "modelo": 2016,
+      "placa": "XML342",
+      "color": "rojo",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 1,
+      "costo": 320000
+    },
+    {
+      "id": 2,
+      "marca_vehiculo": "Renault",
+      "modelo": 2020,
+      "placa": "AGUI78",
+      "color": "azul",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 2,
+      "costo": 500000
+    },
+    {
+      "id": 3,
+      "marca_vehiculo": "KIA",
+      "modelo": 2020,
+      "placa": "RTYU8",
+      "color": "Negro",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 2,
+      "costo": 500000
+    },
+    {
+      "id": 3,
+      "marca_vehiculo": "KIA",
+      "modelo": 2020,
+      "placa": "QAF154",
+      "color": "Negro",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 2,
+      "costo": 500000
+    },
+    {
+      "id": 4,
+      "marca_vehiculo": "Mazda",
+      "modelo": 2022,
+      "placa": "AMF858",
+      "color": "verde",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 3,
+      "costo": 800000
+    },
+    {
+      "id": 4,
+      "marca_vehiculo": "Mazda",
+      "modelo": 2022,
+      "placa": "HVK456",
+      "color": "verde",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 3,
+      "costo": 800000
+    },
+    {
+      "id": 4,
+      "marca_vehiculo": "Mazda",
+      "modelo": 2022,
+      "placa": "YEU14",
+      "color": "verde",
+      "urlimagen": "https://acroadtrip.blob.core.windows.net/catalogo-imagenes/s/RT_V_68eb7bc22ae44262b55f9a7ab74cf01f.jpg",
+      "categoria": 3,
+      "costo": 800000
+    }
+  ],
+  "reserva": [
+  ]
+}

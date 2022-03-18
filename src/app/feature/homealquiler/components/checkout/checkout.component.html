@@ -1,0 +1,48 @@
+
+ <p class="tituloComponente">¡Confirma tú reserva!</p>
+<div class="card"  *ngIf="mostrarResumen">
+    <div class="card-header">
+        <img src="https://rvs-order-summary-component.netlify.app/images/illustration-hero.svg" alt="">
+    </div>
+    <div class="card-body">
+        <div class="card-title">{{title}}</div>
+        <div class="card-text">Confirma los datos de la Reserva
+
+            <div class="container"  *ngIf="mostrarResumen">
+                <ul class="list-group">
+                   <li class="list-group-item">Fecha: {{dataCheckout?.fecha}}</li>
+                    <li class="list-group-item">Costo : {{dataCheckout?.costo | currency}}</li> 
+                    <li class="list-group-item">Adicional : {{dataCheckout?.adicional}}</li>
+                    <li class="list-group-item">Descuento : {{dataCheckout?.descuento}}%</li> 
+                    <li class="list-group-item">Total: {{ (dataCheckout?.costo + dataCheckout?.adicional) - (dataCheckout?.costo)*(dataCheckout?.descuento/100)}} </li>
+                  </ul>
+            </div>
+        </div>
+        <div class="card-plan">
+            <!-- <div class="card-plan-img"></div> -->
+            <div class="card-plan-text">
+                <div class="card-plan-title">Los costos incluyen impuestos* </div>
+                <!-- <div class="card-plan-price">{{dataCheckout?.costo | currency}}</div> -->
+            </div>
+            <!-- <div class="card-plan-link"><a href="#!">Change</a></div> -->
+        </div>
+        <div class="radicado" *ngIf="mostrarRadicado">
+            Radicado: {{resumenReserva[0]?.idRadicado}}
+            <br> <br>
+
+            <p class="textMini">Con este número podrás realizar el seguimiento de tú reserva</p>
+            </div> 
+        <div class="card-payment-button">
+            <button class="btn btn-warning personalizadoButton" (click)="reservar()" *ngIf="!mostrarRadicado">Reservar</button>
+        </div>
+        <!-- <div class="card-cancel-button">
+            <button>Cancel Order</button>
+        </div> -->
+    </div>
+</div>
+ 
+
+
+ 
+ 
+ 

@@ -1,0 +1,19 @@
+<div class="categoriaContainer">
+  <h3 class="planes">Categorías</h3>
+<p class="textoCategoria">Selecciona una categoría de vehículo que desees</p>
+  <div class="categorias">
+    <div
+      class="tarjeta"
+      routerLink="ConsultarEstado"
+      *ngFor="let item of listarCategorias | async; let i = index"
+    >
+    <div (click)="openItem(item.id)">
+        <img src="assets/svg/{{ item?.icono}}" class="svgicon" />
+        <div class="tarjeta_texto">{{ item?.nombreCategoria }}</div>
+        <div class="costo">
+            ${{ item?.precio }}
+        </div>
+    </div>      
+    </div>
+  </div>
+</div>
