@@ -1,3 +1,4 @@
+@Library('ceiba-jenkins-library') _
 pipeline {
   //Donde se va a ejecutar el Pipeline
   agent {
@@ -51,8 +52,8 @@ stage('NPM Install') {
     stage('Static Code Analysis') {
       steps{
         echo '------------>Análisis de código estático<------------'
-       sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:alquileradn.camilo.aguilar',
-        sonarName:'''"CeibaADN-AlquilerAdn(camilo.aguilar)"''',
+       sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:alquileradn.front.camilo.aguilar',
+        sonarName:'''"CeibaADN-AlquilerAdn-Front(camilo.aguilar)"''',
         sonarPathProperties:'./sonar-project.properties')
       }
     }
