@@ -45,7 +45,7 @@ stage('NPM Install') {
       steps {
         echo "------------>Testing<------------"
         sh export DISPLAY=:99
-        sh 'npm run test'
+        sh 'npm run test -- --watch=false --browsers ChromeHeadless'
       }
     }
     stage('Test end-to-end') {
