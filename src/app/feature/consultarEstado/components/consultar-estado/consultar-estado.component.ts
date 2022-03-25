@@ -27,7 +27,6 @@ export class ConsultarEstadoComponent implements OnInit {
            return;
     }
       this.consultaService.consultar(this.idReserva).subscribe((data) => {
-      console.log(data);
       if (data.length > 0){
         this.listarReserva = data;
         this.mostrarReserva = true;
