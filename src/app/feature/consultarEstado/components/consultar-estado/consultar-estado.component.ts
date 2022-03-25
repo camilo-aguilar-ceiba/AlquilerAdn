@@ -13,12 +13,10 @@ export class ConsultarEstadoComponent implements OnInit {
   public listarReserva: ReservaDetail[];
   public idReserva: string;
   mostrarReserva = false;
-  sinResultados = false;
 
   constructor(public consultaService: ConsultasService) { }
 
   ngOnInit(): void {
-
   }
 
   consultarReserva(){
@@ -32,7 +30,6 @@ export class ConsultarEstadoComponent implements OnInit {
         this.mostrarReserva = true;
       }else{
        this.mostrarReserva = false;
-        this.sinResultados = true;
       }
     });
   }

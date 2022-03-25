@@ -16,8 +16,8 @@
 </div>
 
 <div class="detalles">
-    <div class="container nodata" *ngIf="sinResultados">
-   No hemos encontrado resultados para el número de Radicado ingresado.
+    <div class="container nodata" *ngIf="!mostrarReserva">
+   Ingresa un número de Radicado
     </div>
   <div class="container" *ngIf="mostrarReserva">
       <p>A continuación encontrarás el detalle de tú reserva</p>
