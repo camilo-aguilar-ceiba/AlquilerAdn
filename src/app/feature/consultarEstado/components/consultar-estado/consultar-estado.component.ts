@@ -11,9 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ConsultarEstadoComponent implements OnInit {
   public listarReserva: ReservaDetail[];
-
   public idReserva: string;
-  public loading = false;
   mostrarReserva = false;
   sinResultados = false;
 
@@ -28,16 +26,13 @@ export class ConsultarEstadoComponent implements OnInit {
            Swal.fire('Por favor, digita un número de reserva válido');
            return;
     }
-      this.loading = true;
       this.consultaService.consultar(this.idReserva).subscribe((data) => {
       console.log(data);
       if (data.length > 0){
-        this.loading = false;
         this.listarReserva = data;
         this.mostrarReserva = true;
       }else{
-        this.loading = false;
-        this.mostrarReserva = false;
+       this.mostrarReserva = false;
         this.sinResultados = true;
       }
     });

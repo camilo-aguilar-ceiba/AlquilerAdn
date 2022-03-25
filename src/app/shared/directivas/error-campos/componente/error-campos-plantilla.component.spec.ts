@@ -20,6 +20,7 @@ describe('ErrorCamposPlantillaComponent', () => {
   });
 
   it('should create', () => {
+    expect(component.text).toBeUndefined();
     expect(component).toBeTruthy();
   });
 });

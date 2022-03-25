@@ -2,6 +2,7 @@ import { ConsultarEstadoComponent } from './consultar-estado.component';
 import {
   ComponentFixture,
   fakeAsync,
+  flush,
   TestBed,
   waitForAsync,
 } from '@angular/core/testing';
@@ -54,6 +55,8 @@ describe('ConsultarEstadoComponent', () => {
 
   it('✅✅✅✅✅✅ Cargar el detalle de la reserva', fakeAsync(async () => {
     spyOn(consultaService, 'consultar').and.callThrough();
+    component.consultarReserva();
     expect(component).toBeDefined();
+    flush();
      }));
 });
