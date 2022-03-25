@@ -7,8 +7,8 @@
       routerLink="ConsultarEstado"
       *ngFor="let item of listarCategorias | async; let i = index"
     >
-    <div (click)="openItem(item.id)">
-        <img src="assets/svg/{{ item?.icono}}" class="svgicon" />
+    <div (click)="openItem(item.id)" id="OpenCategoria{{i}}">
+        <img src="assets/svg/{{ item?.icono }}" alt="item.svg" class="svgicon" />
         <div class="tarjeta_texto">{{ item?.nombreCategoria }}</div>
         <div class="costo">
             ${{ item?.precio }}

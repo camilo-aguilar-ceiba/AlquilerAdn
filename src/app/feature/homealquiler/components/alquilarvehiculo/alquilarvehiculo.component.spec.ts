@@ -28,7 +28,7 @@ beforeEach(waitForAsync(() => {
       CommonModule,
       HttpClientTestingModule,
       SharedModule,
-      
+
     ],
      providers: [
           { provide: CategoriasService , useClass: CategoriesMockService },
@@ -56,11 +56,12 @@ it('✅✅✅✅✅✅ Cargar el listado de categorías', fakeAsync(async () => 
   // spyOn(component.categoriasService,'consultar').and.callFake(()=>of([
   //   { id:1, nombreCategoria:'suena',precio:5000 }
   //   ])); // para pruebas en especial se utiliza se puede usar return value pero se le pasa la respuesta directamente
-  spyOn(categoriaservice, 'consultar').and.callThrough(); // para llamar atraves del mock
-  component.obtenerCategorias();
-  component.listarCategorias.subscribe(resultado => {
-    expect(resultado.length).toBeGreaterThan(0); // es lo que espera la variable de categorias
-});
+  const categorias  = spyOn(categoriaservice, 'consultar').and.callThrough(); // para llamar atraves del mock
+  component.ngOnInit();
+  expect(categorias).toHaveBeenCalled();
+//   component.listarCategorias.subscribe(resultado => {
+//     expect(resultado.length).toBeGreaterThan(0); // es lo que espera la variable de categorias
+// });
 }));
 
 it('✅✅✅✅✅✅ Redireccionar al usuario al listado de vehículos de una categoría ', () => {

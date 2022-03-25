@@ -1,37 +1,19 @@
 <div class="cardsContainer">
 
-  <div class="cardItem" *ngFor="let vehiculo of listarVehiculos | async">
-    <div class="imgContainer">
+  <div class="cardItem" *ngFor="let vehiculo of listarVehiculos | async ; let i = index">
+    <div class="imgContainer" >
       <img src="{{vehiculo.urlimagen}}" alt="">
     </div>
 
     <div class="detailsContainer">
-      <p>Marca: {{vehiculo.marca_vehiculo}}</p>
-      <p>Placa: {{vehiculo.placa}}</p>
+      <p>Marca: <br> {{vehiculo.marca_vehiculo}}</p>
+      <p>Placa: <br> {{vehiculo.placa}}</p>
       <p>${{vehiculo.costo}}</p>
   </div>
 
-    <button class="btn btn-warning personalizado" (click)="OpenModal(mymodal, vehiculo.id,vehiculo.costo)">Alquilar este vehiculo</button>
+    <button class="btn btn-warning personalizado" id="buttonOpen-{{i+1}}" (click)="openModal(mymodal, vehiculo.id,vehiculo.costo)">Alquilar este vehiculo</button>
   </div>
 </div>
-
-
-
-<!-- 
-<div class="card" style="width: 18rem;" *ngFor="let vehiculo of listarVehiculos | async">
-    <img src="{{vehiculo.urlimagen}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{vehiculo.marca_vehiculo}}</h5>
-      <p class="card-text">{{vehiculo.placa}}</p>
-      <p class="card-text">{{vehiculo.costo}}</p>
-      <p>{{vehiculo.id}}</p>
-      <button (click)="OpenModal(mymodal, vehiculo.id,vehiculo.costo)" class="btn btn-primary">Alquilar este vehiculo</button>
-    </div>
-  </div> -->
-
-
-  
-   
 
   <ng-template #mymodal let-modal>
     <div class="modal-header">
@@ -41,27 +23,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Selecciona la fecha en que deseas reservar, recuerda sólo puedes reservar los días viernes, sábado o domingo.</p>
+        <p class="textoIndicacion">Selecciona la fecha en que deseas reservar, recuerda sólo puedes reservar los días viernes, sábado o domingo.</p>
         <app-reservarvehiculo [idvehiculo]="vehiculoSeleccionado" [costoVehiculo]="vehiculoCosto"  [fechasReserva]="fechasReserva"></app-reservarvehiculo>
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
       </div>
   </ng-template>
-  <!-- <button type="button" (click)="openModel()">Open Modal</button>
-
-<div #myModel class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-     <div class="modal-header">
-        <h5 class="modal-title ">Title</h5>
-        <button type="button" class="close" (click)="closeModel()">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-    </div>
-  </div>
-</div> -->

@@ -1,0 +1,33 @@
+<div class="container-consulta">
+  <h2>Módulo de consulta</h2>
+  <p>
+    Podrás realizar consultas de tu solicitud ingresando el número de radicado
+  </p>
+  <div class="row">
+    <div class="col-md-2">
+      <input class="form-control" type="text" [(ngModel)]="idReserva" />
+    </div>
+    <div class="col-md-10 espaciado">
+      <button class="btn btn-sm btn-warning" (click)="consultarReserva()">
+        Consultar
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="detalles">
+    
+      <div class="spinner-grow " role="status" *ngIf="loading">
+        <span class="sr-only ">Loading...</span>
+      </div>
+    <div class="container nodata" *ngIf="sinResultados">
+   No hemos encontrado resultados para el número de Radicado ingresado.
+    </div>
+  <div class="container" *ngIf="mostrarReserva">
+      <p>A continuación encontrarás el detalle de tú reserva</p>
+    <ul class="list-group" *ngFor="let item of listarReserva">
+      <li class="list-group-item">Fecha: {{ item?.fechaReserva }}</li>
+      <li class="list-group-item">Costo : {{ item?.costo | currency }}</li>
+    </ul>
+  </div>
+</div>

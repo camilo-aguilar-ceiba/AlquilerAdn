@@ -103,7 +103,8 @@ describe('ReservarvehiculoComponent', () => {
 
   it('✅✅✅✅✅✅ OnDateselect', () => {
   const fechaActual = {year: 2022, month: 4, day: 10};
-  component.onDateSelect(fechaActual);
+  component.startDate = fechaActual;
+  component.onDateSelect();
   const data =  component.formatearFecha(fechaActual);
   component.consultarDisponibilidad(data);
   expect(component.mostrarCheckout).toBeDefined();

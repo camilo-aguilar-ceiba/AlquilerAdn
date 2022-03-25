@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HomealquilerModule } from '@alquiler/homealquiler.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { ConsultarEstadoModule } from './feature/consultarEstado/consultar-estado.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     ProductoModule,
     CoreModule,
     HomealquilerModule,
+    ConsultarEstadoModule,
     NgbModule,
     FormsModule
   ],

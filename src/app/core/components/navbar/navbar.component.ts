@@ -24,7 +24,7 @@ import { MenuItem } from '@core/modelo/menu-item';
   }
 
   nav a.router-link-active {
-    color: #106cc8;
+    color: #6610f2;
   }`],
 })
 export class NavbarComponent implements OnInit {

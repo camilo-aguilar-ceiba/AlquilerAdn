@@ -13,7 +13,7 @@ export class AlquilarvehiculoComponent implements OnInit {
   categorias: Categorias[] = [];
   public listarCategorias2: Observable<Categorias[]>;
   public listarCategorias: Observable<Categorias[]>;
-  categoriasHttpTestingService: any;
+
   constructor( private categoriasService: CategoriasService, public router: Router
     ) { }
 

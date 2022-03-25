@@ -14,7 +14,7 @@ export class Vehiculo {
         this.modelo = modelo;
         this.placa = placa;
         this.color = color;
-        this.urlimagen = urlimagen,
+        this.urlimagen = urlimagen;
         this.categoria = categoria;
     }
 }

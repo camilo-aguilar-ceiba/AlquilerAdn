@@ -15,15 +15,16 @@ export class CheckoutComponent implements OnInit {
   public mostrarResumen = true;
   public mostrarRadicado = false;
   public resumenReserva = [];
-  public title = 'Resumen de la reserva';
+
   constructor(private vehiculoService: VehiculoService) {}
 
   ngOnInit(): void {}
 
   reservar() {
-    const radicado = Math.random().toString(36).substring(2, 15);
-    console.log('datos');
-    console.log(JSON.stringify(this.dataCheckout));
+    const numeroCaracteres = 36;
+    const rangoInicial = 2;
+    const rangoFinal = 15;
+    const radicado = Math.random().toString(numeroCaracteres).substring(rangoInicial, rangoFinal);
     this.Mireserva = new Reserva(this.dataCheckout?.idUsuario,
       this.obtenerTotal(),
       this.dataCheckout?.fecha,
@@ -32,9 +33,8 @@ export class CheckoutComponent implements OnInit {
       'pendientes');
     this.vehiculoService.reservar(this.Mireserva).subscribe((data) => {
       if (data) {
-        console.log(data);
         this.resumenReserva.push({
-                idRadicado: radicado,
+                idRadic: radicado,
         });
         Swal.fire('Guardado correctamente');
         this.mostrarResumen = true;
@@ -45,9 +45,9 @@ export class CheckoutComponent implements OnInit {
   }
   obtenerTotal() {
     const valor = this.dataCheckout?.costo + this.dataCheckout?.adicional;
-    console.log(valor);
+    const totalDescuento = 100;
     const descuento =
-      this.dataCheckout?.costo * (this.dataCheckout?.descuento / 100);
+      this.dataCheckout?.costo * (this.dataCheckout?.descuento / totalDescuento);
     return valor - descuento;
   }
 }

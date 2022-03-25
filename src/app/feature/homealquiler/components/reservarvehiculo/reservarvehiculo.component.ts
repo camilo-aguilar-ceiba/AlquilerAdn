@@ -13,13 +13,13 @@ export class ReservarvehiculoComponent implements OnInit {
   @Input() idvehiculo: string;
   @Input() fechasReserva = [];
   @Input() costoVehiculo: number;
-  public valorDescuento = 10;
-  public costoAdicional = 100000;
+
   public mostrarCheckout = false;
   public mostrarFormulario = true;
   public fechaActual: string; // '2022-03-27'//
   public dataCheck: Checkout;
   public cantidadReservas = 0;
+  public startDate;
   checkPermitido = false;
   constructor(public vehiculoService: VehiculoService) {}
 
@@ -28,18 +28,21 @@ export class ReservarvehiculoComponent implements OnInit {
 
   }
 
-  onDateSelect(fechaSeleccionada) {
+  onDateSelect() {
+    if (this.startDate === undefined) {
+      Swal.fire('Ingresa una fecha');
+      return;
+    }
     this.mostrarCheckout = false;
-    const fechaCalendario = this.formatearFecha(fechaSeleccionada);
-    console.log(fechaCalendario);
+    const fechaCalendario = this.formatearFecha(this.startDate);
     this.consultarDisponibilidad(fechaCalendario);
   }
 
   formatearFecha(fechaSeleccionada) {
-    console.log(fechaSeleccionada);
+    const numeroMes = 9;
     const year = fechaSeleccionada.year;
-    const month = fechaSeleccionada.month <= 9 ? '0' + fechaSeleccionada.month : fechaSeleccionada.month;
-    const day = fechaSeleccionada.day <= 9 ? '0' + fechaSeleccionada.day : fechaSeleccionada.day;
+    const month = fechaSeleccionada.month <= numeroMes ? '0' + fechaSeleccionada.month : fechaSeleccionada.month;
+    const day = fechaSeleccionada.day <= numeroMes ? '0' + fechaSeleccionada.day : fechaSeleccionada.day;
     const finalDate = year + '-' + month + '-' + day;
     return finalDate.toString();
   }
@@ -86,14 +89,19 @@ export class ReservarvehiculoComponent implements OnInit {
   }
 
   validarCargos(fechareal) {
+    const viernes = 5;
+    const sabado = 0;
+    const domingo = 6;
+    const diaJueves = 4;
+    let valorDescuento = 10;
+    const costoAdicional = 100000;
     const DiaActual = moment(this.fechaActual).day();
-    const validarFecha = DiaActual === 5 || DiaActual === 0 || DiaActual === 6;
+    const validarFecha = DiaActual === viernes || DiaActual === sabado || DiaActual === domingo;
     if (this.fechaActual === fechareal && validarFecha) {
-      console.log('costo vehiculo 1 ' + this.costoVehiculo);
       this.dataCheck = {
         costo: this.costoVehiculo,
         descuento: 0,
-        adicional:  this.costoAdicional,
+        adicional:  costoAdicional,
         idUsuario: 1,
         idVehiculo: 2,
         fecha: fechareal
@@ -103,12 +111,12 @@ export class ReservarvehiculoComponent implements OnInit {
       this.fechaActual < fechareal
     ) {
       if (moment(this.fechaActual).day() > 0 &&
-      moment(this.fechaActual).day() <= 4){
-        this.valorDescuento = 0;
+      moment(this.fechaActual).day() <= diaJueves){
+      valorDescuento = 0;
       }
       this.dataCheck = {
         costo: this.costoVehiculo,
-        descuento: this.valorDescuento,
+        descuento: valorDescuento,
         adicional:  0,
         idUsuario: 1,
         idVehiculo: 2,

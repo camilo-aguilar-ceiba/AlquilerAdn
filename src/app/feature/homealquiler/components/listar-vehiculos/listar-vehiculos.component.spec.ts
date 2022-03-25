@@ -82,7 +82,7 @@ describe('ListarVehiculosComponent', () => {
     const r = (component.vehiculoSeleccionado = '1');
     const data =
       '{_declarationLView: LComponentView_ListarVehiculosComponent(37), _declarationTContainer: Node, elementRef: ElementRef}';
-    component.OpenModal(data, v, r);
+    component.openModal(data, v, r);
     expect(component.vehiculoSeleccionado).toBeDefined();
   });
 });

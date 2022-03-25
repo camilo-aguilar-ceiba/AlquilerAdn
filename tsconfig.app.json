@@ -20,6 +20,9 @@
       "@alquiler/*": [
         "src/app/feature/homealquiler/*"
       ],
+      "@consultar/*": [
+        "src/app/feature/consultarEstado/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ]

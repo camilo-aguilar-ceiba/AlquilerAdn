@@ -1,6 +1,7 @@
 import { Categorias } from '@alquiler/shared/model/categorias';
 import { Reserva } from '@alquiler/shared/model/reserva';
 import { Vehiculo } from '@alquiler/shared/model/vehiculo';
+import { ReservaDetail } from '@consultar/shared/model/ReservaDetail';
 import { Observable, of } from 'rxjs';
 
 export class CategoriesMockService {
@@ -17,6 +18,13 @@ export class CategoriesMockService {
             { id: 1, marcaVehiculo: 'Renault', modelo: 2020, placa: 'AGUI78', color: 'azul', urlimagen: 'https://www.svgimages.com/svg-image/s6/car-left-side-256x256.png', categoria: 2}
         ]);
     }
+    consultarReserva(id): Observable<ReservaDetail[]>{
+        console.log(id);
+        return of([
+            { id: 1, usuarioid: 'Renault', costo: 200000, fechaReserva: '2022-05-04', vehicleId: '1', idRadic: 'adkjasd', estado: 'pendiente'}
+        ]);
+    }
+
 
     reservar(): Observable<Reserva[]>{
         return of([
@@ -25,7 +33,7 @@ export class CategoriesMockService {
                 costo: 450000,
                 fechaReserva: '2022-03-18',
                 vehicleId: '2',
-                idRadicado: '64ngb8yfhsw',
+                idRadic: '64ngb8yfhsw',
                 estado: 'pendiente',
                 id: 1
               }
@@ -50,7 +58,7 @@ export class CategoriesMockService {
                         costo: 450000,
                         fechaReserva: '2022-03-18',
                         vehicleId: 2,
-                        idRadicado: '64ngb8yfhsw',
+                        idRadic: '64ngb8yfhsw',
                         estado: 'pendiente',
                         id: 1
                       }

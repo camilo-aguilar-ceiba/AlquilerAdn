@@ -36,19 +36,12 @@ export class ListarVehiculosComponent implements OnInit {
 
   }
 
-  OpenModal(content, idVehiculo, vehiculoCosto) {
-    console.log((content));
+  openModal(content, idVehiculo, vehiculoCosto) {
     this.vehiculoSeleccionado = idVehiculo;
     this.vehiculoCosto = vehiculoCosto;
     this.modalService
     .open(content, { ariaLabelledBy: 'modal-basic-title' })
-    .result.then(
-      // (result) => {
-      //   console.log(result);
-      //   this.closeResult = 'Closed';
-      // },
-    );
-
+    .result.then();
   }
 
  }
